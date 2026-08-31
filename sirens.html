@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <meta
+            name="description"
+            content="Sirens: a portal-driven puzzle game built in a custom raycasting engine."
+        />
+        <title>Sirens · Quinn Farrell</title>
+        <link rel="stylesheet" href="style.css" />
+        <script src="nav.js" defer></script>
+    </head>
+    <body>
+        <header class="site-header">
+            <div class="nav-wrap">
+                <a class="brand" href="index.html">{QF}<span>;</span></a>
+                <nav class="site-nav" aria-label="Main navigation">
+                    <a href="about.html">About</a
+                    ><a href="projects.html" aria-current="page">Projects</a
+                    ><a href="contact.html">Contact</a>
+                </nav>
+            </div>
+        </header>
+        <main>
+            <section class="hero project-hero">
+                <img
+                    class="hero-media"
+                    src="images/sirens.png"
+                    alt="Sirens game scene"
+                />
+                <div class="hero-content">
+                    <div class="eyebrow">Featured project</div>
+                    <h1>Sirens</h1>
+                    <p class="hero-copy">
+                        A mind-bending, portal-driven puzzle game built by a
+                        five-person team in a custom C++ raycasting engine.
+                    </p>
+                    <div class="fact-list">
+                        <span class="fact">DigiPen Institute of Technology</span
+                        ><span class="fact">Team of 5</span
+                        ><span class="fact">Graphics & systems programmer</span
+                        ><span class="fact">Custom engine</span
+                        ><span class="fact">Jan–Apr 2026</span>
+                    </div>
+                    <div class="button-row">
+                        <a
+                            class="button"
+                            href="https://quaak.itch.io/sirens"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            >Play Sirens <span aria-hidden="true">→</span></a
+                        >
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <div class="container">
+                    <div class="section-heading">
+                        <div class="eyebrow">In game</div>
+                        <h2>Game showcase.</h2>
+                    </div>
+                    <div class="gallery">
+                        <figure>
+                            <img
+                                src="sirens/images/Screenshot_01.png"
+                                alt="Sirens game screenshot"
+                            />
+                        </figure>
+                        <figure>
+                            <img
+                                src="sirens/images/Screenshot_02.png"
+                                alt="Sirens game screenshot"
+                            />
+                        </figure>
+                        <figure>
+                            <img
+                                src="sirens/images/Screenshot_03.png"
+                                alt="Sirens game screenshot"
+                            />
+                        </figure>
+                        <figure>
+                            <img
+                                src="sirens/images/Screenshot_04.png"
+                                alt="Sirens game screenshot"
+                            />
+                        </figure>
+                        <figure>
+                            <img
+                                src="sirens/images/Screenshot_05.png"
+                                alt="Sirens game screenshot"
+                            />
+                        </figure>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <div class="container article">
+                    <div class="section-heading">
+                        <div class="eyebrow">Overview</div>
+                        <h2>Key contributions</h2>
+                        <p class="lede">
+                            Sirens extends a custom raycasting engine with
+                            complex geometry, texture mapping, and
+                            portals, enabling more variety in gameplay and
+                            puzzle design.
+                        </p>
+                    </div>
+                    <article class="article-section">
+                        <div>
+                            <h3>Complex raycasting</h3>
+                            <p>
+                                Traditional raycasting moves rays along a grid
+                                until they collide with a wall. While performant
+                                and easy to implement, it restricts level geometry
+                                to gridlines and has no way to express additional
+                                behavior.
+                            </p>
+                            <p>
+                                We revised our rendering pipeline to associate
+                                each tile with a propagation function. This function
+                                determines where a ray appears after travelling
+                                through a tile and reports collisions within it,
+                                allowing tiles to take on multiple shapes, like
+                                cylinders, along with multiple behaviors, like
+                                portals.
+                            </p>
+                        </div>
+                        <div class="image-pair">
+                            <figure>
+                                <img
+                                    src="sirens/images/StandardGeometry_Diagram.png"
+                                    alt="Traditional raycasting diagram"
+                                />
+                            </figure>
+                            <figure>
+                                <img
+                                    src="sirens/images/ComplexGeometry_Diagram.png"
+                                    alt="Complex geometry raycasting diagram"
+                                />
+                            </figure>
+                            <figcaption>
+                                Left: Raycasting without complex geometry. Rays can
+                                only intersect with gridlines, and all tiles behave
+                                the same.
+                                <br>
+                                Right: Raycasting with complex geometry. Tiles
+                                themselves determine how rays advance, allowing for
+                                fine-grained control over collisions.
+                            </figcaption>
+                        </div>
+                    </article>
+                    <article class="article-section">
+                        <div>
+                            <h3>Texture mapping</h3>
+                            <p>
+                                Because the renderer works with discrete pixel
+                                columns rather than vertex data, texture
+                                coordinates had to be calculated manually.
+                                Vertical texture coordinates could be interpolated
+                                along the height of the column, but horizontal
+                                coordinates needed a more involved solution.
+                            </p>
+                            <p>
+                                Each tile's propagation function is responsible
+                                for calculating the distance traveled, along with
+                                a horizontal texture coordinate on collision. The
+                                renderer then calculates the height of the column
+                                and draws it, passing both texture coordinates
+                                through a custom shader program for sampling.
+                            </p>
+                        </div>
+                        <figure>
+                            <img
+                                src="sirens/images/TextureMapping.png"
+                                alt="Texture coordinates visualized in Sirens"
+                            />
+                            <figcaption>
+                                Texture coordinates visualized in the renderer.
+                            </figcaption>
+                        </figure>
+                    </article>
+                </div>
+            </section>
+        </main>
+        <footer class="site-footer">
+            <div class="container">
+                © Quinn Farrell · Graphics programmer & systems engineer
+            </div>
+        </footer>
+    </body>
+</html>

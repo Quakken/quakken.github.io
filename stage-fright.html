@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <meta
+            name="description"
+            content="Stage Fright: a fast-paced Unity rhythm game."
+        />
+        <title>Stage Fright · Quinn Farrell</title>
+        <link rel="stylesheet" href="style.css" />
+        <script src="nav.js" defer></script>
+    </head>
+    <body>
+        <header class="site-header">
+            <div class="nav-wrap">
+                <a class="brand" href="index.html">{QF}<span>;</span></a>
+                <nav class="site-nav" aria-label="Main navigation">
+                    <a href="about.html">About</a
+                    ><a href="projects.html" aria-current="page">Projects</a
+                    ><a href="contact.html">Contact</a>
+                </nav>
+            </div>
+        </header>
+        <main>
+            <section class="hero project-hero">
+                <img
+                    class="hero-media"
+                    src="images/stage-fright.png"
+                    alt="Stage Fright game scene"
+                />
+                <div class="hero-content">
+                    <div class="eyebrow">Featured project</div>
+                    <h1>Stage Fright</h1>
+                    <p class="hero-copy">
+                        A fast-paced rhythm action game created with an
+                        interdisciplinary team of artists, sound designers, and
+                        programmers.
+                    </p>
+                    <div class="fact-list">
+                        <span class="fact">Team of 4</span
+                        ><span class="fact">Gameplay & systems programmer</span
+                        ><span class="fact">Unity</span
+                        ><span class="fact">Mar–Apr 2025</span>
+                    </div>
+                    <div class="button-row">
+                        <a class="button" href="https://digipen-academy-wanic.itch.io/2025-stage-fright" target="_blank" rel="noopener noreferrer">Play Stage Fright <span aria-hidden="true">→</span></a>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <div class="container">
+                    <div class="section-heading">
+                        <div class="eyebrow">In game</div>
+                        <h2>Game showcase.</h2>
+                    </div>
+                    <div class="gallery">
+                        <figure>
+                            <img
+                                src="stage-fright/images/Screenshot_01.png"
+                                alt="Stage Fright game screenshot"
+                            />
+                        </figure>
+                        <figure>
+                            <img
+                                src="stage-fright/images/Screenshot_02.png"
+                                alt="Stage Fright game screenshot"
+                            />
+                        </figure>
+                        <figure>
+                            <img
+                                src="stage-fright/images/Screenshot_03.png"
+                                alt="Stage Fright game screenshot"
+                            />
+                        </figure>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <div class="container article">
+                    <div class="section-heading">
+                        <div class="eyebrow">Overview</div>
+                        <h2>Key contributions.</h2>
+                        <p class="lede">
+                            It’s five minutes to curtain call, but the band
+                            still hasn’t shown up. Stage Fright is a rhythm
+                            action game made by two artists, a sound designer,
+                            and a programmer.
+                        </p>
+                    </div>
+                    <article class="article-section">
+                        <div>
+                            <h3>Asset pipelines</h3>
+                            <p>
+                                With a team made primarily of artists, clear
+                                production guidelines were essential. All assets
+                                went through a three-stage pipeline before being
+                                incorperated into the game.
+                            </p>
+                            <p>
+                                First, a blockout tested size, orientation,
+                                proportion, and animation keyframes. That
+                                blockout was added to the engine for quick
+                                feedback before artists committed to a final
+                                asset. This process kept iteration fast and
+                                feedback frequent across visual and audio
+                                assets.
+                            </p>
+                        </div>
+                        <figure>
+                            <img
+                                src="stage-fright/images/StageFright-AssetPipeline.png"
+                                alt="Stage Fright asset pipeline flowchart"
+                            />
+                            <figcaption>
+                                Production pipeline used on Stage Fright.
+                            </figcaption>
+                        </figure>
+                    </article>
+                    <article class="article-section">
+                        <div>
+                            <h3>Score system</h3>
+                            <p>
+                                A global score manager is responsible for tracking
+                                the player's points. Ay object reading or modifying
+                                score must communicate its intent to the manager,
+                                keeping the interface centralized and easy to extend
+                                with new mechanics.
+                            </p>
+                            <p>
+                                The manager automatically calculates and applies
+                                the player’s multiplier to any incoming score.
+                                As a result, instruments can modify score without
+                                needing to account for external factors, while the
+                                scoreboard can read the most up-to-date score from a
+                                single location.
+                            </p>
+                        </div>
+                        <figure>
+                            <img
+                                src="stage-fright/images/StageFright-ScoreManager.png"
+                                alt="Stage Fright score manager flowchart"
+                            />
+                            <figcaption>
+                                Objects access the player’s score through the
+                                score manager.
+                            </figcaption>
+                        </figure>
+                    </article>
+                </div>
+            </section>
+        </main>
+        <footer class="site-footer">
+            <div class="container">
+                © Quinn Farrell · Graphics programmer & systems engineer
+            </div>
+        </footer>
+    </body>
+</html>

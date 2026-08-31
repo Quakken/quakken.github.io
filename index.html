@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta
+            name="description"
+            content="Portfolio of Quinn Farrell, graphics programmer and systems engineer."
+        />
+        <title>Quinn Farrell · Graphics Programmer</title>
+        <link rel="stylesheet" href="style.css" />
+        <script src="nav.js" defer></script>
+    </head>
+    <body>
+        <header class="site-header">
+            <div class="nav-wrap">
+                <a class="brand" href="index.html">{QF}<span>;</span></a>
+                <nav class="site-nav" aria-label="Main navigation">
+                    <a href="about.html">About</a
+                    ><a href="projects.html">Projects</a
+                    ><a href="contact.html">Contact</a>
+                </nav>
+            </div>
+        </header>
+        <main>
+            <section class="hero">
+                <video
+                    class="hero-media"
+                    autoplay
+                    loop
+                    muted
+                    playsinline
+                    disablepictureinpicture
+                    aria-label="Highlights"
+                >
+                    <source src="woop/WOOP_Showcase.mp4" type="video/mp4" />
+                </video>
+                <div class="hero-content">
+                    <div class="eyebrow">Portfolio</div>
+                    <h1>Quinn<br />Farrell</h1>
+                    <p class="hero-copy">
+                        Graphics programmer and systems engineer who loves
+                        building game engines, rendering pipelines, and
+                        designing flexible gameplay systems.
+                    </p>
+                    <div class="button-row">
+                        <a class="button" href="projects.html"
+                            >Explore projects
+                            <span aria-hidden="true">→</span></a
+                        ><a class="button button--quiet" href="about.html"
+                            >About me</a
+                        >
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <div class="container about-grid">
+                    <div>
+                        <div class="eyebrow">A little bit about me</div>
+                        <h2>Hi, I'm Quinn!</h2>
+                        <p class="lede prose">
+                            I’m a junior studying real-time interactive
+                            simulation at DigiPen Institute of Technology. I
+                            love exploring graphics APIs like OpenGL and Vulkan,
+                            while bridging the gap between crativity and technical
+                            performance.
+                        </p>
+                    </div>
+                    <ul class="skills">
+                        <li>
+                            <strong>Languages</strong>
+                            <span>C, C++, C#, Lua, GLSL, HLSL</span>
+                        </li>
+                        <li>
+                            <strong>Tools & APIs</strong
+                            ><span
+                                >OpenGL, FMOD, Unity, CMake, Git, Visual
+                                Studio</span
+                            >
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section class="section">
+                <div class="container">
+                    <div class="section-heading">
+                        <div class="eyebrow">Selected work</div>
+                        <h2>Featured Projects</h2>
+                        <p>
+                            Rendering experiments, gameplay systems, and
+                            everything in between.
+                        </p>
+                    </div>
+                    <div class="project-grid">
+                        <a class="project-card" href="sirens.html"
+                            ><img
+                                src="images/sirens.png"
+                                alt="Sirens puzzle game"
+                            />
+                            <div class="project-meta">Team of 5 · 2026</div>
+                            <h3>Sirens</h3>
+                            <p>
+                                A portal-driven puzzle game in a custom C++
+                                raycasting engine.
+                            </p></a
+                        ><a class="project-card" href="woop.html"
+                            ><img
+                                src="images/woop.png"
+                                alt="WOOP software renderer"
+                            />
+                            <div class="project-meta">Solo · 2025–26</div>
+                            <h3>WOOP</h3>
+                            <p>
+                                A DOOM-inspired software renderer built around
+                                BSP traversal.
+                            </p></a
+                        ><a class="project-card" href="stage-fright.html"
+                            ><img
+                                src="images/stage-fright.png"
+                                alt="Stage Fright rhythm game"
+                            />
+                            <div class="project-meta">Team of 4 · 2025</div>
+                            <h3>Stage Fright</h3>
+                            <p>
+                                A fast-paced rhythm game made with an
+                                interdisciplinary team.
+                            </p></a
+                        >
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <div class="container">
+                    <div class="contact-panel">
+                        <div class="eyebrow">Get in touch</div>
+                        <h2>Let's talk!</h2>
+                        <p class="lede prose">
+                            I’m always happy to connect about graphics, systems,
+                            and interactive work.
+                        </p>
+                        <div class="button-row">
+                            <a class="button" href="contact.html"
+                                >Contact me <span aria-hidden="true">→</span></a
+                            >
+                            <a
+                                class="button button--quiet"
+                                href="https://www.linkedin.com/in/qafarrell/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                >LinkedIn</a
+                            >
+                            <a
+                                class="button button--quiet"
+                                href="https://www.github.com/quakken/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                >GitHub</a
+                            >
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="site-footer">
+            <div class="container">
+                © Quinn Farrell · Graphics programmer & systems engineer
+            </div>
+        </footer>
+    </body>
+</html>

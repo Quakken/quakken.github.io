@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <meta
+            name="description"
+            content="WOOP: a DOOM-inspired 3D software renderer."
+        />
+        <title>WOOP · Quinn Farrell</title>
+        <link rel="stylesheet" href="style.css" />
+        <script src="nav.js" defer></script>
+    </head>
+    <body>
+        <header class="site-header">
+            <div class="nav-wrap">
+                <a class="brand" href="index.html">{QF}<span>;</span></a>
+                <nav class="site-nav" aria-label="Main navigation">
+                    <a href="about.html">About</a
+                    ><a href="projects.html" aria-current="page">Projects</a
+                    ><a href="contact.html">Contact</a>
+                </nav>
+            </div>
+        </header>
+        <main>
+            <section class="hero project-hero">
+                <video
+                    class="hero-media"
+                    autoplay
+                    loop
+                    muted
+                    playsinline
+                    disablepictureinpicture
+                    aria-label="WOOP renderer showcase"
+                >
+                    <source src="woop/WOOP_Showcase.mp4" type="video/mp4" />
+                </video>
+                <div class="hero-content">
+                    <div class="eyebrow">Featured project</div>
+                    <h1>WOOP</h1>
+                    <p class="hero-copy">
+                        A 3D software renderer inspired by the original DOOM,
+                        built to explore BSP traversal and efficient software
+                        rendering.
+                    </p>
+                    <div class="fact-list">
+                        <span class="fact">Solo project</span
+                        ><span class="fact">Graphics programmer</span
+                        ><span class="fact">Custom renderer</span
+                        ><span class="fact">Oct 2025–Jan 2026</span>
+                    </div>
+                    <div class="button-row">
+                        <a
+                            class="button"
+                            href="https://github.com/Quakken/woop"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            >View on GitHub <span aria-hidden="true">→</span></a
+                        >
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <div class="container">
+                    <div class="section-heading">
+                        <div class="eyebrow">In action</div>
+                        <h2>Rendering Showcase.</h2>
+                    </div>
+                    <div class="gallery">
+                        <figure>
+                            <img
+                                src="woop/images/Screenshot_01.png"
+                                alt="WOOP renderer scene"
+                            />
+                        </figure>
+                        <figure>
+                            <img
+                                src="woop/images/Screenshot_02.png"
+                                alt="WOOP renderer scene"
+                            />
+                        </figure>
+                        <figure>
+                            <img
+                                src="woop/images/Screenshot_03.png"
+                                alt="WOOP renderer scene"
+                            />
+                        </figure>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <div class="container article">
+                    <div class="section-heading">
+                        <div class="eyebrow">Overview</div>
+                        <h2>Key contributions.</h2>
+                        <p class="lede">
+                            WOOP features a custom WAD file parser built to
+                            specification, reading game data at runtime,
+                            including the BSP data used to render levels.
+                        </p>
+                    </div>
+                    <article class="article-section">
+                        <div>
+                            <h3>WAD file parsing</h3>
+                            <p>
+                                DOOM stores game data in a special file format
+                                called a WAD. WOOP provides a comprehensive
+                                parsing API following the
+                                <a
+                                    class="text-link"
+                                    href="https://www.doomwiki.org/wiki/WAD"
+                                    >DOOM Wiki specification</a
+                                >, giving the renderer access to compiled level
+                                data, textures, sounds, and more.
+                            </p>
+                        </div>
+                    </article>
+                    <article class="article-section">
+                        <div>
+                            <h3>BSP-accelerated rendering</h3>
+                            <p>
+                                WOOP draws levels on the CPU with a BSP-driven
+                                pipeline designed to reduce overdraw. Beginning
+                                at the player’s position, sectors are drawn
+                                outward until the screen is filled or no sectors
+                                remain.
+                            </p>
+                            <p>
+                                Clipping tests skip walls outside the player’s
+                                field of view and render only visible segments.
+                                These are combined with depth tests that discard
+                                occluded objects, minimizing draw operations and
+                                improving frame rate.
+                            </p>
+                        </div>
+                        <figure>
+                            <img
+                                src="woop/images/E1M1_Rendering.gif"
+                                alt="Front-to-back rendering in WOOP"
+                            />
+                            <figcaption>
+                                Rendering in slow-motion: Walls close to the
+                                player are drawn first, while hidden walls are
+                                skipped.
+                            </figcaption>
+                        </figure>
+                    </article>
+                </div>
+            </section>
+        </main>
+        <footer class="site-footer">
+            <div class="container">
+                © Quinn Farrell · Graphics programmer & systems engineer
+            </div>
+        </footer>
+    </body>
+</html>
